@@ -454,6 +454,26 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
     '</div>';
   }
 
+  // Ikon tab: pakai foto/logo yang diunggah, atau buat ikon dari inisial brand
+  function faviconHref() {
+    if (S.img) return S.img;
+    var c = document.createElement('canvas');
+    c.width = 64;
+    c.height = 64;
+    var ctx = c.getContext('2d');
+    var b = BG[S.bg];
+    ctx.fillStyle = b.ac;
+    ctx.beginPath();
+    ctx.arc(32, 32, 32, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = contrastOn(b.ac);
+    ctx.font = '600 34px Georgia, serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText((S.brand.trim().charAt(0) || 'B').toUpperCase(), 32, 35);
+    return c.toDataURL('image/png');
+  }
+
   function exportHTML() {
     var fallback = '<script>(function(){' +
       'var y=String(new Date().getFullYear());' +
@@ -467,6 +487,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
     return '<!doctype html>\n<html lang="id">\n<head>\n<meta charset="utf-8">\n' +
       '<meta name="viewport" content="width=device-width,initial-scale=1">\n' +
       '<title>' + esc(S.brand.trim() || 'Bio Link') + '</title>\n' +
+      '<link rel="icon" href="' + esc(faviconHref()) + '">\n' +
       '<link href="' + FONT_URL + '" rel="stylesheet">\n' +
       '<style>\nhtml,body{margin:0;min-height:100%}\nbody{background:' + BG[S.bg].bg + '}\n' + BIO_CSS.replace(/\}/g, '}\n') + '\n</style>\n</head>\n<body>\n' +
       bioHTML() + '\n' + fallback + '\n' + stateScript + '</body>\n</html>';
