@@ -82,7 +82,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
       <h1>Bio Link Premium</h1>
       <p>Susun halaman bio link untuk klien dalam hitungan menit.</p>
     </div>
-    <div class="badge">21 background · 3 mode palet · 3 pratinjau</div>
+    <div class="badge">21 background Â· 3 mode palet Â· 3 pratinjau</div>
   </header>
 
   <div class="grid">
@@ -163,6 +163,12 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
         </div>
         <p class="hint">Kode bio link ada di kotak bawah. Jika tombol salin tidak berhasil, tekan "Pilih semua kode", lalu Ctrl+C (Cmd+C di Mac). Untuk menyimpan sebagai file, tempel di Notepad atau TextEdit lalu simpan sebagai bio-link.html.</p>
         <textarea id="code" readonly rows="10" aria-label="Kode HTML bio link"></textarea>
+        <div class="stack" style="margin-top:16px">
+          <label class="f">Impor HTML hasil tool ini (untuk diedit lagi)
+            <input type="file" id="importfile" accept=".html,text/html">
+          </label>
+          <p class="hint">Hanya file yang diekspor dari tool ini yang bisa diimpor. Semua pengaturan akan dipulihkan.</p>
+        </div>
         <p class="hint" id="status" role="status" aria-live="polite"></p>
       </section>
     </div>
@@ -266,16 +272,16 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
     {l:'Lokasi Toko', u:'https://maps.app.goo.gl/', i:'pin'}
   ];
 
-  var DEFAULT_FOOT = 'Design by Mas Irkham · All rights reserved © {tahun}';
+  var DEFAULT_FOOT = 'Design by Mas Irkham Â· All rights reserved Â© {tahun}';
 
   var S = {
     brand: 'Dealova Studio',
     tagline: 'Pilihan produk terbaik, langsung klik dan belanja.',
     bg: 0,
     t: {
-      name: {f:'Instrument Serif', s:38, w:400, i:false, u:false, d:false, a:'center'},
-      tag:  {f:'Manrope', s:15, w:400, i:false, u:false, d:false, a:'center'},
-      link: {f:'Manrope', s:15, w:700, i:false, u:false, d:false, a:'left'}
+      name: {f:'Instrument Serif', s:38, w:400, i:false, u:false, d:false, a:'center', c:''},
+      tag:  {f:'Manrope', s:15, w:400, i:false, u:false, d:false, a:'center', c:''},
+      link: {f:'Manrope', s:15, w:700, i:false, u:false, d:false, a:'left', c:''}
     },
     foot: {mode:'on', text: DEFAULT_FOOT},
     links: [
@@ -338,7 +344,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
       ';font-style:' + (t.i ? 'italic' : 'normal') +
       ';text-transform:' + (t.u ? 'uppercase' : 'none') +
       ';text-decoration:' + (t.d ? 'underline' : 'none') +
-      ';text-align:' + t.a;
+      ';text-align:' + t.a + (t.c ? ';color:' + t.c : '');
   }
   // Perataan blok untuk nama dan tagline (kiri, tengah, kanan)
   function alignMargins(key) {
@@ -417,7 +423,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
   function footHTML() {
     if (S.foot.mode === 'off') return '';
     var yr = '<span data-year>' + String(new Date().getFullYear()) + '</span>';
-    if (S.foot.mode === 'on') return 'Design by <b>Mas Irkham</b> · All rights reserved © ' + yr;
+    if (S.foot.mode === 'on') return 'Design by <b>Mas Irkham</b> Â· All rights reserved Â© ' + yr;
     return esc(S.foot.text).replace(/\{tahun\}/g, yr);
   }
   function setStatus(msg) { $('#status').textContent = msg; }
@@ -457,12 +463,13 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
         'im.addEventListener("error",function(){av.innerHTML="<span class=\\"av-init\\">"+(av.getAttribute("data-init")||"B")+"</span>";});' +
       '});' +
     '})();<\/script>';
+    var stateScript = '<script type="application/json" id="bio-state">' + JSON.stringify(S).replace(/</g, '\\u003c') + '<\/script>\n';
     return '<!doctype html>\n<html lang="id">\n<head>\n<meta charset="utf-8">\n' +
       '<meta name="viewport" content="width=device-width,initial-scale=1">\n' +
       '<title>' + esc(S.brand.trim() || 'Bio Link') + '</title>\n' +
       '<link href="' + FONT_URL + '" rel="stylesheet">\n' +
       '<style>\nbody{margin:0;background:#fff}\n' + BIO_CSS + '\n</style>\n</head>\n<body>\n' +
-      bioHTML() + '\n' + fallback + '\n</body>\n</html>';
+      bioHTML() + '\n' + fallback + '\n' + stateScript + '</body>\n</html>';
   }
 
   function update() {
@@ -502,6 +509,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
           return '<option value="' + o[0] + '"' + (o[0] === t.a ? ' selected' : '') + '>' + o[1] + '</option>';
         }).join('') +
       '</select></label>' +
+      '<label class="f">Warna huruf<div class="row"><input type="color" data-tk="c" value="' + (t.c || BG[S.bg].fg) + '" aria-label="Warna huruf"><button type="button" class="btn ghost2" data-act="tcolor" data-key="' + key + '">Ikuti background</button></div></label>' +
       '<div class="tgrp">' +
         '<label class="tg"><input type="checkbox" data-tk="i"' + (t.i ? ' checked' : '') + '> Miring</label>' +
         '<label class="tg"><input type="checkbox" data-tk="u"' + (t.u ? ' checked' : '') + '> Huruf besar</label>' +
@@ -522,7 +530,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
       return '<label><input type="radio" name="foot" value="' + o[0] + '"' + (S.foot.mode === o[0] ? ' checked' : '') + '> ' + o[1] + '</label>';
     }).join('') + '</div>';
     if (S.foot.mode === 'on') {
-      html += '<p class="hint">Teks: Design by Mas Irkham · All rights reserved, dengan tahun otomatis.</p>';
+      html += '<p class="hint">Teks: Design by Mas Irkham Â· All rights reserved, dengan tahun otomatis.</p>';
     } else if (S.foot.mode === 'custom') {
       html += '<label class="f">Teks footer (tulis {tahun} untuk tahun otomatis)' +
         '<input type="text" id="foottext" value="' + esc(S.foot.text) + '" maxlength="140"></label>';
@@ -536,7 +544,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
     $('#bg').innerHTML = BG.map(function (b, i) {
       return '<button type="button" class="bgc" data-act="set" data-set="bg" data-v="' + i + '" aria-pressed="' + (S.bg === i) + '">' +
         '<span class="sw" style="background:' + b.bg + '"></span>' +
-        '<b>' + String(i + 1).padStart(2, '0') + ' · ' + esc(b.n) + '</b>' +
+        '<b>' + String(i + 1).padStart(2, '0') + ' Â· ' + esc(b.n) + '</b>' +
         '<small>' + esc(b.m) + '</small></button>';
     }).join('');
   }
@@ -562,7 +570,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
       return '<div class="lrow">' +
         '<div class="lrow-top"><span class="lnum">' + (i + 1) + '</span>' +
           '<input type="text" data-key="label" data-i="' + i + '" value="' + esc(l.label) + '" placeholder="Label tombol" maxlength="40" aria-label="Label link ' + (i + 1) + '">' +
-          '<button type="button" class="x" data-act="dellink" data-i="' + i + '" aria-label="Hapus link ' + (i + 1) + '"' + (S.links.length <= 1 ? ' disabled' : '') + '>×</button>' +
+          '<button type="button" class="x" data-act="dellink" data-i="' + i + '" aria-label="Hapus link ' + (i + 1) + '"' + (S.links.length <= 1 ? ' disabled' : '') + '>Ã—</button>' +
         '</div>' +
         '<div class="lrow-bot">' +
           '<input type="url" data-key="url" data-i="' + i + '" value="' + esc(l.url) + '" placeholder="https://" maxlength="300" aria-label="URL link ' + (i + 1) + '">' +
@@ -656,6 +664,70 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
     reader.readAsDataURL(file);
   }
 
+  function sanitizeTypo(o, base) {
+    o = o || {};
+    return {
+      f: FONTS.some(function (f) { return f.n === o.f; }) ? o.f : base.f,
+      s: Math.min(80, Math.max(10, Number(o.s) || base.s)),
+      w: [300, 400, 500, 600, 700, 800].indexOf(Number(o.w)) >= 0 ? Number(o.w) : base.w,
+      i: typeof o.i === 'boolean' ? o.i : base.i,
+      u: typeof o.u === 'boolean' ? o.u : base.u,
+      d: typeof o.d === 'boolean' ? o.d : base.d,
+      a: ['left', 'center', 'right'].indexOf(o.a) >= 0 ? o.a : base.a,
+      c: /^#[0-9a-fA-F]{6}$/.test(o.c || '') ? o.c : (base.c || '')
+    };
+  }
+
+  function importHTML(text) {
+    var m = text.match(/<script type="application\/json" id="bio-state">([\s\S]*?)<\/script>/);
+    if (!m) { setStatus('File ini tidak berisi data bio link dari tool ini.'); return; }
+    var d;
+    try { d = JSON.parse(m[1]); } catch (e) { setStatus('Data di dalam file rusak dan tidak bisa dibaca.'); return; }
+    if (!d || typeof d !== 'object') { setStatus('Data di dalam file tidak valid.'); return; }
+
+    if (typeof d.brand === 'string') S.brand = d.brand.slice(0, 60);
+    if (typeof d.tagline === 'string') S.tagline = d.tagline.slice(0, 140);
+    if (Number.isInteger(d.bg) && d.bg >= 0 && d.bg < BG.length) S.bg = d.bg;
+    if (d.t) {
+      ['name', 'tag', 'link'].forEach(function (k) { S.t[k] = sanitizeTypo(d.t[k], S.t[k]); });
+    }
+    if (d.foot && ['on', 'off', 'custom'].indexOf(d.foot.mode) >= 0) {
+      S.foot.mode = d.foot.mode;
+      if (typeof d.foot.text === 'string') S.foot.text = d.foot.text.slice(0, 140);
+    }
+    if (Array.isArray(d.links) && d.links.length) {
+      S.links = d.links.slice(0, 10).map(function (l) {
+        l = l || {};
+        var icon = (ICONS[l.icon] || l.icon === 'none') ? l.icon : 'none';
+        return {
+          label: String(l.label || 'Link').slice(0, 40),
+          url: String(l.url || '').slice(0, 300),
+          color: /^#[0-9a-fA-F]{6}$/.test(l.color || '') ? l.color : '',
+          icon: icon
+        };
+      });
+    }
+    if (['auto', 'same', 'custom'].indexOf(d.mode) >= 0) S.mode = d.mode;
+    if (/^#[0-9a-fA-F]{6}$/.test(d.color || '')) S.color = d.color;
+    if (['upload', 'url'].indexOf(d.av) >= 0) S.av = d.av;
+    if (typeof d.img === 'string') S.img = d.img;
+    if (['circle', 'square'].indexOf(d.shape) >= 0) S.shape = d.shape;
+    if (['none', 'ring', 'double', 'thick'].indexOf(d.frame) >= 0) S.frame = d.frame;
+    if (['desktop', 'tablet', 'mobile'].indexOf(d.device) >= 0) S.device = d.device;
+
+    $('#brand').value = S.brand;
+    $('#tagline').value = S.tagline;
+    refresh();
+    setStatus('Desain berhasil diimpor. Silakan lanjut mengedit.');
+  }
+
+  function readImport(file) {
+    var reader = new FileReader();
+    reader.onload = function () { importHTML(String(reader.result)); };
+    reader.onerror = function () { setStatus('File tidak bisa dibaca.'); };
+    reader.readAsText(file);
+  }
+
   function setTypo(el) {
     var key = el.closest('[data-typo]').dataset.typo;
     var tk = el.dataset.tk;
@@ -688,6 +760,9 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
       }
     } else if (a === 'copy') {
       copyCode();
+    } else if (a === 'tcolor') {
+      S.t[b.dataset.key].c = '';
+      refresh();
     } else if (a === 'select') {
       var ta = $('#code');
       ta.focus();
@@ -711,7 +786,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
       update();
     } else if (t.id === 'imgurl') {
       S.img = t.value.trim();
-      setStatus(S.img ? 'Memuat gambar…' : '');
+      setStatus(S.img ? 'Memuat gambarâ€¦' : '');
       update();
     } else if (t.id === 'foottext') {
       S.foot.text = t.value;
@@ -730,6 +805,9 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
       S.foot.mode = t.value;
       buildFoot();
       update();
+    } else if (t.id === 'importfile' && t.files && t.files[0]) {
+      readImport(t.files[0]);
+      t.value = '';
     } else if (t.id === 'file' && t.files && t.files[0]) {
       readImage(t.files[0]);
     }
