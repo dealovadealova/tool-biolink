@@ -61,7 +61,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
 .rg{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:10px}
 .rg label{display:flex;gap:6px;align-items:center;font-size:13px;font-weight:700;cursor:pointer}
 .btnwrap{margin-top:0}
-#code{margin-top:12px;font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.4;white-space:pre;overflow:auto}
+#code{margin-top:12px;font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.4;white-space:pre-wrap;overflow-wrap:anywhere;overflow:auto}
 .btn.ghost2{background:transparent;color:var(--ink);border:1px solid var(--ink)}
 .pvbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
 .pvbar .seg{margin:0}
@@ -82,7 +82,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
       <h1>Bio Link Premium</h1>
       <p>Susun halaman bio link untuk klien dalam hitungan menit.</p>
     </div>
-    <div class="badge">21 background Â· 3 mode palet Â· 3 pratinjau</div>
+    <div class="badge">21 background · 3 mode palet · 3 pratinjau</div>
   </header>
 
   <div class="grid">
@@ -272,7 +272,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
     {l:'Lokasi Toko', u:'https://maps.app.goo.gl/', i:'pin'}
   ];
 
-  var DEFAULT_FOOT = 'Design by Mas Irkham Â· All rights reserved Â© {tahun}';
+  var DEFAULT_FOOT = 'Design by Mas Irkham · All rights reserved © {tahun}';
 
   var S = {
     brand: 'Dealova Studio',
@@ -423,7 +423,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
   function footHTML() {
     if (S.foot.mode === 'off') return '';
     var yr = '<span data-year>' + String(new Date().getFullYear()) + '</span>';
-    if (S.foot.mode === 'on') return 'Design by <b>Mas Irkham</b> Â· All rights reserved Â© ' + yr;
+    if (S.foot.mode === 'on') return 'Design by <b>Mas Irkham</b> · All rights reserved © ' + yr;
     return esc(S.foot.text).replace(/\{tahun\}/g, yr);
   }
   function setStatus(msg) { $('#status').textContent = msg; }
@@ -468,7 +468,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
       '<meta name="viewport" content="width=device-width,initial-scale=1">\n' +
       '<title>' + esc(S.brand.trim() || 'Bio Link') + '</title>\n' +
       '<link href="' + FONT_URL + '" rel="stylesheet">\n' +
-      '<style>\nhtml,body{margin:0;min-height:100%}\nbody{background:' + BG[S.bg].bg + '}\n' + BIO_CSS + '\n</style>\n</head>\n<body>\n' +
+      '<style>\nhtml,body{margin:0;min-height:100%}\nbody{background:' + BG[S.bg].bg + '}\n' + BIO_CSS.replace(/\}/g, '}\n') + '\n</style>\n</head>\n<body>\n' +
       bioHTML() + '\n' + fallback + '\n' + stateScript + '</body>\n</html>';
   }
 
@@ -530,7 +530,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
       return '<label><input type="radio" name="foot" value="' + o[0] + '"' + (S.foot.mode === o[0] ? ' checked' : '') + '> ' + o[1] + '</label>';
     }).join('') + '</div>';
     if (S.foot.mode === 'on') {
-      html += '<p class="hint">Teks: Design by Mas Irkham Â· All rights reserved, dengan tahun otomatis.</p>';
+      html += '<p class="hint">Teks: Design by Mas Irkham · All rights reserved, dengan tahun otomatis.</p>';
     } else if (S.foot.mode === 'custom') {
       html += '<label class="f">Teks footer (tulis {tahun} untuk tahun otomatis)' +
         '<input type="text" id="foottext" value="' + esc(S.foot.text) + '" maxlength="140"></label>';
@@ -544,7 +544,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
     $('#bg').innerHTML = BG.map(function (b, i) {
       return '<button type="button" class="bgc" data-act="set" data-set="bg" data-v="' + i + '" aria-pressed="' + (S.bg === i) + '">' +
         '<span class="sw" style="background:' + b.bg + '"></span>' +
-        '<b>' + String(i + 1).padStart(2, '0') + ' Â· ' + esc(b.n) + '</b>' +
+        '<b>' + String(i + 1).padStart(2, '0') + ' · ' + esc(b.n) + '</b>' +
         '<small>' + esc(b.m) + '</small></button>';
     }).join('');
   }
@@ -570,7 +570,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
       return '<div class="lrow">' +
         '<div class="lrow-top"><span class="lnum">' + (i + 1) + '</span>' +
           '<input type="text" data-key="label" data-i="' + i + '" value="' + esc(l.label) + '" placeholder="Label tombol" maxlength="40" aria-label="Label link ' + (i + 1) + '">' +
-          '<button type="button" class="x" data-act="dellink" data-i="' + i + '" aria-label="Hapus link ' + (i + 1) + '"' + (S.links.length <= 1 ? ' disabled' : '') + '>Ã—</button>' +
+          '<button type="button" class="x" data-act="dellink" data-i="' + i + '" aria-label="Hapus link ' + (i + 1) + '"' + (S.links.length <= 1 ? ' disabled' : '') + '>×</button>' +
         '</div>' +
         '<div class="lrow-bot">' +
           '<input type="url" data-key="url" data-i="' + i + '" value="' + esc(l.url) + '" placeholder="https://" maxlength="300" aria-label="URL link ' + (i + 1) + '">' +
@@ -786,7 +786,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
       update();
     } else if (t.id === 'imgurl') {
       S.img = t.value.trim();
-      setStatus(S.img ? 'Memuat gambarâ€¦' : '');
+      setStatus(S.img ? 'Memuat gambar…' : '');
       update();
     } else if (t.id === 'foottext') {
       S.foot.text = t.value;
