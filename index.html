@@ -1,0 +1,748 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Generator Bio Link Premium</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400..700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Serif+Display:ital@0;1&family=Instrument+Serif:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,300..800;1,300..800&family=Oswald:wght@300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#16130E;--paper:#F3EEE4;--card:#FBF8F1;--line:#E2D9C8;--mute:#6F675A;--brass:#9C6B25;--brass-2:#C9974A;color-scheme:light}
+body{background:var(--paper);color:var(--ink);font-family:"Manrope",system-ui,sans-serif;font-size:14px;line-height:1.5;padding-top:24px;padding-bottom:48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+*{box-sizing:border-box}
+.wrap{max-width:1240px;margin:0 auto}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.top h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:44px;line-height:1;margin:6px 0 0;letter-spacing:-.01em}
+.top p{margin:8px 0 0;color:var(--mute)}
+.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);font-weight:800}
+.badge{font-size:12px;font-weight:700;color:var(--mute);border:1px solid var(--line);border-radius:999px;padding:7px 14px;background:var(--card)}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:20px;align-items:start}
+@media (max-width:960px){.grid{grid-template-columns:minmax(0,1fr)}.preview{position:static!important}}
+.preview{position:sticky;top:16px;min-width:0}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;min-width:0}
+.sec{padding:18px 0;border-top:1px solid var(--line)}
+.sec:first-child{border-top:0;padding-top:0}
+.sh{font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px;display:flex;gap:10px;align-items:center;font-weight:800}
+.sh .n{color:var(--brass);font-variant-numeric:tabular-nums}
+.stack{display:grid;gap:12px}
+.f{display:grid;gap:6px;font-size:12px;color:var(--mute);font-weight:700;min-width:0}
+input[type=text],input[type=url],input[type=number],input:not([type]),textarea,select{width:100%;min-width:0;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);font:inherit;font-size:14px}
+textarea{resize:vertical}
+input:focus-visible,textarea:focus-visible,select:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--brass-2);outline-offset:2px}
+.seg{display:flex;flex-wrap:wrap;gap:4px;background:#EBE3D3;padding:4px;border-radius:12px;margin-bottom:12px}
+.seg button{flex:1 1 auto;border:0;background:transparent;padding:9px 12px;border-radius:9px;font:inherit;font-weight:700;color:var(--mute);cursor:pointer;font-size:13px;white-space:nowrap}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.bggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px}
+.bgc{border:1px solid var(--line);background:#fff;border-radius:12px;padding:6px;text-align:left;cursor:pointer;font:inherit;color:var(--ink);min-width:0}
+.bgc .sw{display:block;height:46px;border-radius:8px;margin-bottom:7px}
+.bgc b{display:block;font-size:12px;line-height:1.25}
+.bgc small{display:block;font-size:10.5px;color:var(--mute);line-height:1.3;margin-top:2px}
+.bgc[aria-pressed=true]{outline:2px solid var(--ink);outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.chip{border:1px dashed var(--brass-2);background:transparent;padding:7px 12px;border-radius:999px;font:inherit;font-size:12px;font-weight:700;color:var(--brass);cursor:pointer}
+.chip:disabled{opacity:.4;cursor:default}
+.linkhead{font-size:12px;color:var(--mute);font-weight:700;margin-bottom:8px}
+.lrow{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px;display:grid;gap:8px;margin-bottom:10px}
+.lrow-top,.lrow-bot{display:flex;gap:8px;align-items:center;min-width:0;flex-wrap:wrap}
+.lrow-top input{min-width:0;flex:1}
+.lrow-bot input[type=url]{min-width:0;flex:1 1 180px}
+.lrow-bot select{flex:0 1 170px;min-width:120px}
+.lnum{width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:11px;font-weight:800;flex:none}
+.x{border:0;background:#F2E9DA;color:var(--ink);width:34px;height:34px;border-radius:9px;cursor:pointer;font-size:18px;flex:none}
+.x:disabled{opacity:.35;cursor:default}
+input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-radius:10px;padding:3px;background:#fff;flex:none;cursor:pointer}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.btn{background:var(--ink);color:var(--paper);border:0;padding:12px 16px;border-radius:12px;font:inherit;font-weight:700;cursor:pointer;margin-top:4px}
+.btn.ghost{background:transparent;color:var(--ink);border:1px dashed var(--mute);width:100%}
+.palette{display:flex;gap:6px;margin-top:10px}
+.palette i{flex:1;height:22px;border-radius:6px}
+.hint{font-size:12px;color:var(--mute);margin:8px 0 0}
+.typo{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;padding:12px;border:1px dashed var(--line);border-radius:12px;margin-top:10px;background:#FFFDF8}
+.tlabel{grid-column:1/-1;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);font-weight:800}
+.tgrp{grid-column:1/-1;display:flex;gap:18px;flex-wrap:wrap}
+.tg{display:flex;gap:6px;align-items:center;font-size:12px;font-weight:700;color:var(--mute);cursor:pointer}
+.tg input,.rg input{accent-color:var(--ink);width:16px;height:16px;margin:0}
+.rg{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:10px}
+.rg label{display:flex;gap:6px;align-items:center;font-size:13px;font-weight:700;cursor:pointer}
+.btnwrap{margin-top:0}
+#code{margin-top:12px;font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.4;white-space:pre;overflow:auto}
+.btn.ghost2{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.pvbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.pvbar .seg{margin:0}
+.stage{background:radial-gradient(circle at 50% 0,#E9E1D0,#D9CFBB);border-radius:14px;padding:18px;display:flex;justify-content:center;min-width:0}
+.dev{width:100%;background:#fff;overflow:hidden;box-sizing:border-box;margin:0 auto;transition:width .35s ease}
+.dev-desktop{border-radius:12px}
+.dev-tablet{width:min(560px,100%);border:12px solid var(--ink);border-radius:30px}
+.dev-mobile{width:min(375px,100%);border:10px solid var(--ink);border-radius:42px}
+.dev-desktop .bio{min-height:700px}
+.dev-tablet .bio{min-height:660px}
+.dev-mobile .bio{min-height:660px;padding-top:44px}
+@media (prefers-reduced-motion:reduce){.dev,.bio-link{transition:none!important}}
+</style>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">Generator</div>
+      <h1>Bio Link Premium</h1>
+      <p>Susun halaman bio link untuk klien dalam hitungan menit.</p>
+    </div>
+    <div class="badge">21 background · 3 mode palet · 3 pratinjau</div>
+  </header>
+
+  <div class="grid">
+    <div class="panel">
+      <section class="sec">
+        <h2 class="sh"><span class="n">01</span>Identitas</h2>
+        <div class="stack">
+          <label class="f">Nama brand / klien
+            <input type="text" id="brand" data-field="brand" maxlength="60">
+          </label>
+          <div id="typo-name"></div>
+          <label class="f">Tagline
+            <textarea id="tagline" data-field="tagline" rows="2" maxlength="140"></textarea>
+          </label>
+          <div id="typo-tag"></div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <h2 class="sh"><span class="n">02</span>Background sesuai model bisnis</h2>
+        <div class="bggrid" id="bg"></div>
+      </section>
+
+      <section class="sec">
+        <h2 class="sh"><span class="n">03</span>Link tombol</h2>
+        <div class="chips" id="chips"></div>
+        <div class="linkhead" id="count"></div>
+        <div id="links"></div>
+        <button type="button" class="btn ghost" data-act="addlink">+ Tambah link klien</button>
+        <div id="typo-link"></div>
+      </section>
+
+      <section class="sec">
+        <h2 class="sh"><span class="n">04</span>Palet warna tombol</h2>
+        <div class="seg">
+          <button type="button" data-act="set" data-set="mode" data-v="auto" aria-pressed="true">Otomatis bervariasi</button>
+          <button type="button" data-act="set" data-set="mode" data-v="same" aria-pressed="false">Seragam</button>
+          <button type="button" data-act="set" data-set="mode" data-v="custom" aria-pressed="false">Kustom per tombol</button>
+        </div>
+        <div id="btnarea"></div>
+      </section>
+
+      <section class="sec">
+        <h2 class="sh"><span class="n">05</span>Foto / logo &amp; bingkai</h2>
+        <div class="seg">
+          <button type="button" data-act="set" data-set="av" data-v="upload" aria-pressed="true">Unggah file</button>
+          <button type="button" data-act="set" data-set="av" data-v="url" aria-pressed="false">Link gambar pihak ketiga</button>
+        </div>
+        <div id="avarea"></div>
+        <div class="stack" style="margin-top:14px">
+          <div class="f">Bentuk foto
+            <div class="seg">
+              <button type="button" data-act="set" data-set="shape" data-v="circle" aria-pressed="true">Bulat</button>
+              <button type="button" data-act="set" data-set="shape" data-v="square" aria-pressed="false">Kotak membulat</button>
+            </div>
+          </div>
+          <div class="f">Bingkai
+            <div class="seg">
+              <button type="button" data-act="set" data-set="frame" data-v="none" aria-pressed="false">Tanpa</button>
+              <button type="button" data-act="set" data-set="frame" data-v="ring" aria-pressed="true">Cincin</button>
+              <button type="button" data-act="set" data-set="frame" data-v="double" aria-pressed="false">Ganda</button>
+              <button type="button" data-act="set" data-set="frame" data-v="thick" aria-pressed="false">Tebal</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <h2 class="sh"><span class="n">06</span>Footer</h2>
+        <div id="footarea"></div>
+      </section>
+
+      <section class="sec">
+        <h2 class="sh"><span class="n">07</span>Ekspor</h2>
+        <div class="row">
+          <button type="button" class="btn" data-act="copy">Salin kode HTML</button>
+          <button type="button" class="btn ghost2" data-act="select">Pilih semua kode</button>
+        </div>
+        <p class="hint">Kode bio link ada di kotak bawah. Jika tombol salin tidak berhasil, tekan "Pilih semua kode", lalu Ctrl+C (Cmd+C di Mac). Untuk menyimpan sebagai file, tempel di Notepad atau TextEdit lalu simpan sebagai bio-link.html.</p>
+        <textarea id="code" readonly rows="10" aria-label="Kode HTML bio link"></textarea>
+        <p class="hint" id="status" role="status" aria-live="polite"></p>
+      </section>
+    </div>
+
+    <aside class="preview">
+      <div class="panel">
+        <div class="pvbar">
+          <span class="eyebrow">Pratinjau</span>
+          <div class="seg">
+            <button type="button" data-act="set" data-set="device" data-v="desktop" aria-pressed="true">Desktop</button>
+            <button type="button" data-act="set" data-set="device" data-v="tablet" aria-pressed="false">Tablet</button>
+            <button type="button" data-act="set" data-set="device" data-v="mobile" aria-pressed="false">HP</button>
+          </div>
+        </div>
+        <div class="stage">
+          <div id="dev" class="dev dev-desktop"></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script>
+(function () {
+  var FONT_URL = 'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400..700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Serif+Display:ital@0;1&family=Instrument+Serif:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,300..800;1,300..800&family=Oswald:wght@300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap';
+
+  var FONTS = [
+    {n:'Instrument Serif', c:'serif'},
+    {n:'Playfair Display', c:'serif'},
+    {n:'Cormorant Garamond', c:'serif'},
+    {n:'DM Serif Display', c:'serif'},
+    {n:'Lora', c:'serif'},
+    {n:'Manrope', c:'sans'},
+    {n:'Plus Jakarta Sans', c:'sans'},
+    {n:'Montserrat', c:'sans'},
+    {n:'Poppins', c:'sans'},
+    {n:'Oswald', c:'sans'},
+    {n:'Bebas Neue', c:'sans'},
+    {n:'Caveat', c:'cursive'}
+  ];
+  var WEIGHTS = [[300,'Light 300'],[400,'Regular 400'],[500,'Medium 500'],[600,'Semibold 600'],[700,'Bold 700'],[800,'Extrabold 800']];
+  var FALLBACK = {serif:'Georgia,serif', sans:'system-ui,sans-serif', cursive:'cursive'};
+  var TYPO_LABEL = {name:'Tipografi nama brand', tag:'Tipografi tagline', link:'Tipografi nama link (semua tombol)'};
+
+  var BG = [
+    {n:'Fashion & Pakaian', m:'Visual kuat, gaya editorial', bg:'linear-gradient(160deg,#2B1D24,#5A2E3F)', fg:'#F7EDEF', ac:'#E9B8C4'},
+    {n:'Kecantikan & Skincare', m:'Lembut, glowing', bg:'linear-gradient(160deg,#F9E6E6,#F0C6CE)', fg:'#3A2226', ac:'#B5576A'},
+    {n:'Kesehatan & Herbal', m:'Natural, menenangkan', bg:'linear-gradient(160deg,#E2EBD7,#B7CDA9)', fg:'#1F2D1A', ac:'#3E6B33'},
+    {n:'Teknologi & Gadget', m:'Modern, presisi', bg:'linear-gradient(160deg,#0B1A33,#1D3A6E)', fg:'#EAF2FF', ac:'#5AA9FF'},
+    {n:'Makanan & Minuman', m:'Hangat, menggugah selera', bg:'linear-gradient(160deg,#FFB86B,#EE6F3A)', fg:'#2A1204', ac:'#7A2E0E'},
+    {n:'Kopi & Kafe', m:'Cozy, aroma kayu', bg:'linear-gradient(160deg,#3B2A22,#1B120E)', fg:'#F3E6D6', ac:'#D2A46B'},
+    {n:'Otomotif', m:'Tegas, bertenaga', bg:'linear-gradient(160deg,#141414,#5C0F14)', fg:'#F5F5F5', ac:'#E0393E'},
+    {n:'Properti & Interior', m:'Elegan, premium', bg:'linear-gradient(160deg,#1E2A3A,#3C4F66)', fg:'#F3F0E8', ac:'#D9B77A'},
+    {n:'Edukasi & Kursus', m:'Terpercaya, cerdas', bg:'linear-gradient(160deg,#EEF0FF,#C9CFFA)', fg:'#1A1F4D', ac:'#4149C9'},
+    {n:'Keuangan & Investasi', m:'Profesional, tenang', bg:'linear-gradient(160deg,#06291F,#0F5A45)', fg:'#E8FFF5', ac:'#4FE0A6'},
+    {n:'Olahraga & Fitness', m:'Energik, bold', bg:'linear-gradient(160deg,#E8FF5A,#B3DB12)', fg:'#111111', ac:'#111111'},
+    {n:'Ibu & Bayi', m:'Hangat, lembut', bg:'linear-gradient(160deg,#FFF2E8,#FFD8C2)', fg:'#4A2C20', ac:'#D9825B'},
+    {n:'Rumah Tangga & Dapur', m:'Praktis, nuansa linen', bg:'linear-gradient(160deg,#F5EFE4,#E3D5BC)', fg:'#3A3024', ac:'#8C6A3F'},
+    {n:'Gaming', m:'Neon, dinamis', bg:'linear-gradient(160deg,#0D0221,#3B0A68)', fg:'#F4E9FF', ac:'#C56BFF'},
+    {n:'Travel & Wisata', m:'Segar, lepas', bg:'linear-gradient(160deg,#84D5E8,#2C7DA0)', fg:'#FFFFFF', ac:'#FFD166'},
+    {n:'Produk Lokal & Pertanian', m:'Autentik, alami', bg:'linear-gradient(160deg,#55642F,#2B3416)', fg:'#F4F1DE', ac:'#C9D66B'},
+    {n:'Islami & Syariah', m:'Teduh, bernuansa emas', bg:'linear-gradient(160deg,#0E3B2E,#071F18)', fg:'#F6EFD9', ac:'#D4AF5A'},
+    {n:'Hewan Peliharaan', m:'Ceria, hangat', bg:'linear-gradient(160deg,#FFF5DA,#F5DC9C)', fg:'#3B2A10', ac:'#B07A1E'},
+    {n:'Elektronik Rumah', m:'Bersih, teknis', bg:'linear-gradient(160deg,#EAEEF3,#C6CFDA)', fg:'#1B2430', ac:'#2F5D8C'},
+    {n:'Minimalis Netral', m:'Polos, fokus ke produk', bg:'#FAFAF7', fg:'#111111', ac:'#111111'},
+    {n:'Monokrom Gelap', m:'Dramatis, kontras tinggi', bg:'#0A0A0A', fg:'#F2F2F2', ac:'#F2F2F2'}
+  ];
+
+  // Ikon: b = warna resmi brand; tanpa b = ikon pilihan
+  var ICONS = {
+    wa:   {n:'WhatsApp', b:'#25D366', s:'<path d="M3.5 20.5l1.2-3.9A8.5 8.5 0 1 1 7.6 19.4z"/><path d="M9.2 8.6c0 2.9 2.3 5.4 5.2 5.9l1.2-1.3-1.9-1-.8.8c-.9-.4-1.9-1.4-2.3-2.3l.8-.8-1-1.9z"/>'},
+    ig:   {n:'Instagram', b:'#E1306C', s:'<rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/>'},
+    tt:   {n:'TikTok', b:'#111111', s:'<path d="M14 3v11.2a3.3 3.3 0 1 1-3.3-3.3"/><path d="M14 3c.4 2.6 2.1 4.2 4.8 4.4"/>'},
+    yt:   {n:'YouTube', b:'#FF0000', s:'<rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z"/>'},
+    fb:   {n:'Facebook', b:'#1877F2', s:'<path d="M14.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.5V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H9.4v3h2.6V21"/>'},
+    star: {n:'Testimoni', s:'<path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.8z"/>'},
+    pin:  {n:'Lokasi', s:'<path d="M12 21s-6.5-5.6-6.5-10.8a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z"/><circle cx="12" cy="10.2" r="2.3"/>'},
+    cart: {n:'Keranjang', s:'<path d="M3 4h2.2l2.3 11h10.5L20.5 7H6.2"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/>'},
+    bag:  {n:'Tas Belanja', s:'<path d="M5 8h14l-1 12H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/>'},
+    gift: {n:'Hadiah', s:'<rect x="3.5" y="8" width="17" height="4"/><path d="M5.5 12v8.5h13V12M12 8v12.5"/><path d="M12 8c-1.8-3-6-3-6-.8S9.5 8 12 8zM12 8c1.8-3 6-3 6-.8S14.5 8 12 8z"/>'},
+    crown:{n:'Mahkota / VIP', s:'<path d="M3.5 8l4.2 4 4.3-6.5 4.3 6.5 4.2-4-1.8 10.5H5.3z"/>'},
+    flame:{n:'Promo Panas', s:'<path d="M12 3c1 4 5.2 5.4 5.2 10.2a5.2 5.2 0 0 1-10.4 0c0-2.2 1-3.8 2.1-4.8 0 2 .9 3.1 2 3.4-.4-3.2-.1-5.6 1.1-8.8z"/>'},
+    spark:{n:'Kilau', s:'<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/>'},
+    heart:{n:'Favorit', s:'<path d="M12 20s-7.2-4.4-7.2-9.6A4 4 0 0 1 12 8a4 4 0 0 1 7.2 2.4C19.2 15.6 12 20 12 20z"/>'},
+    book: {n:'Katalog / Panduan', s:'<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 5.5v16"/>'},
+    mail: {n:'Email', s:'<rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/>'},
+    phone:{n:'Telepon', s:'<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>'},
+    link: {n:'Tautan', s:'<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>'},
+    play: {n:'Video', s:'<path d="M7 5l12 7-12 7z"/>'},
+    globe:{n:'Website', s:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>'}
+  };
+  var ICON_ORDER = ['none','wa','ig','tt','yt','fb','star','pin','cart','bag','gift','crown','flame','spark','heart','book','mail','phone','link','play','globe'];
+
+  var PRESETS = [
+    {l:'Chat WhatsApp', u:'https://wa.me/62', i:'wa'},
+    {l:'Instagram', u:'https://instagram.com/', i:'ig'},
+    {l:'TikTok', u:'https://tiktok.com/@', i:'tt'},
+    {l:'YouTube', u:'https://youtube.com/@', i:'yt'},
+    {l:'Facebook', u:'https://facebook.com/', i:'fb'},
+    {l:'Testimoni', u:'https://', i:'star'},
+    {l:'Lokasi Toko', u:'https://maps.app.goo.gl/', i:'pin'}
+  ];
+
+  var DEFAULT_FOOT = 'Design by Mas Irkham · All rights reserved © {tahun}';
+
+  var S = {
+    brand: 'Dealova Studio',
+    tagline: 'Pilihan produk terbaik, langsung klik dan belanja.',
+    bg: 0,
+    t: {
+      name: {f:'Instrument Serif', s:38, w:400, i:false, u:false, d:false, a:'center'},
+      tag:  {f:'Manrope', s:15, w:400, i:false, u:false, d:false, a:'center'},
+      link: {f:'Manrope', s:15, w:700, i:false, u:false, d:false, a:'left'}
+    },
+    foot: {mode:'on', text: DEFAULT_FOOT},
+    links: [
+      {label: 'Belanja Sekarang', url: 'https://example.com/produk', color: '', icon: 'cart'},
+      {label: 'Lihat Katalog', url: 'https://example.com/katalog', color: '', icon: 'book'}
+    ],
+    mode: 'auto',
+    color: '#9C6B25',
+    av: 'upload',
+    img: '',
+    shape: 'circle',
+    frame: 'ring',
+    device: 'desktop'
+  };
+
+  var BIO_CSS = '' +
+    '.bio{box-sizing:border-box;min-height:100%;display:flex;flex-direction:column;align-items:center;padding:56px 22px 26px;font-family:\'Manrope\',system-ui,sans-serif;text-align:center}' +
+    '.bio-wrap{width:100%;max-width:440px;display:flex;flex-direction:column;align-items:center;gap:14px}' +
+    '.av{width:116px;height:116px;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:rgba(127,127,127,.18);flex:none;box-sizing:border-box;margin-bottom:6px}' +
+    '.av.sq{border-radius:26px}' +
+    '.av img{width:100%;height:100%;object-fit:cover;display:block}' +
+    '.av-init{font-family:\'Instrument Serif\',Georgia,serif;font-size:50px;line-height:1;color:var(--acc)}' +
+    '.fr-ring{outline:2px solid var(--acc);outline-offset:7px}' +
+    '.fr-double{border:3px solid var(--acc);outline:1px solid var(--acc);outline-offset:7px}' +
+    '.fr-thick{border:6px solid var(--acc)}' +
+    '.bio-name{width:100%;margin:8px 0 0;line-height:1.08;text-wrap:balance;letter-spacing:-.01em;overflow-wrap:anywhere;font-weight:400}' +
+    '.bio-tag{width:100%;margin:0;line-height:1.6;opacity:.86;max-width:34ch;text-wrap:balance}' +
+    '.bio-links{width:100%;display:flex;flex-direction:column;gap:12px;margin-top:14px}' +
+    '.bio-link{display:flex;align-items:center;justify-content:flex-start;gap:12px;width:100%;min-height:56px;padding:9px 18px 9px 10px;border-radius:16px;background:var(--b);color:var(--bt);text-decoration:none;box-shadow:0 10px 24px -12px var(--b);transition:transform .2s ease,box-shadow .2s ease;box-sizing:border-box}' +
+    '.bio-link.noico{justify-content:center;padding:14px 20px}' +
+    '.bio-link:hover{transform:translateY(-2px);box-shadow:0 14px 28px -12px var(--b)}' +
+    '.bio-link:focus-visible{outline:2px solid var(--acc);outline-offset:3px}' +
+    '.lbl{min-width:0;flex:1;overflow-wrap:anywhere;text-align:left}' +
+    '.bio-link.noico .lbl{text-align:center}' +
+    '.ico{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;flex:none;background:rgba(255,255,255,.22);color:currentColor}' +
+    '.ico.br{background:#fff;color:var(--brand)}' +
+    '.ico svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}' +
+    '.bio-foot{margin-top:auto;padding-top:40px;font-size:12px;letter-spacing:.02em;opacity:.8;display:flex;flex-wrap:wrap;gap:4px;align-items:center;justify-content:center}' +
+    '.bio-foot b{font-weight:800}';
+
+  function $(s) { return document.querySelector(s); }
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  function fontOf(name) {
+    return FONTS.filter(function (f) { return f.n === name; })[0] || FONTS[5];
+  }
+  // Tanda kutip tunggal supaya aman di dalam atribut style="..."
+  function famStack(name) {
+    var f = fontOf(name);
+    return "'" + f.n + "'," + FALLBACK[f.c];
+  }
+  function tStyle(key) {
+    var t = S.t[key];
+    return 'font-family:' + famStack(t.f) +
+      ';font-size:' + t.s + 'px' +
+      ';font-weight:' + t.w +
+      ';font-style:' + (t.i ? 'italic' : 'normal') +
+      ';text-transform:' + (t.u ? 'uppercase' : 'none') +
+      ';text-decoration:' + (t.d ? 'underline' : 'none') +
+      ';text-align:' + t.a;
+  }
+  // Perataan blok untuk nama dan tagline (kiri, tengah, kanan)
+  function alignMargins(key) {
+    var a = S.t[key].a;
+    if (a === 'left') return 'margin-left:0;margin-right:auto';
+    if (a === 'right') return 'margin-left:auto;margin-right:0';
+    return 'margin-left:auto;margin-right:auto';
+  }
+  // Perataan isi tombol link: kiri, tengah, kanan
+  function justifyOf(a) {
+    return a === 'left' ? 'flex-start' : a === 'right' ? 'flex-end' : 'center';
+  }
+  function hex2rgb(h) {
+    h = h.replace('#', '');
+    return [0, 2, 4].map(function (i) { return parseInt(h.substr(i, 2), 16); });
+  }
+  function rgb2hsl(r, g, b) {
+    r /= 255; g /= 255; b /= 255;
+    var mx = Math.max(r, g, b), mn = Math.min(r, g, b), h = 0, s = 0, l = (mx + mn) / 2;
+    if (mx !== mn) {
+      var d = mx - mn;
+      s = l > 0.5 ? d / (2 - mx - mn) : d / (mx + mn);
+      if (mx === r) h = (g - b) / d + (g < b ? 6 : 0);
+      else if (mx === g) h = (b - r) / d + 2;
+      else h = (r - g) / d + 4;
+      h *= 60;
+    }
+    return {h: h, s: s, l: l};
+  }
+  function hsl2hex(h, s, l) {
+    var c = (1 - Math.abs(2 * l - 1)) * s;
+    var x = c * (1 - Math.abs((h / 60) % 2 - 1));
+    var m = l - c / 2;
+    var rgb = h < 60 ? [c, x, 0] : h < 120 ? [x, c, 0] : h < 180 ? [0, c, x] : h < 240 ? [0, x, c] : h < 300 ? [x, 0, c] : [c, 0, x];
+    return '#' + rgb.map(function (v) {
+      return Math.round((v + m) * 255).toString(16).padStart(2, '0');
+    }).join('');
+  }
+  function contrastOn(hex) {
+    var c = hex2rgb(hex).map(function (v) {
+      v /= 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    });
+    var L = 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
+    return L > 0.36 ? '#16130E' : '#FFFFFF';
+  }
+  function palette() {
+    var b = BG[S.bg];
+    var base = rgb2hsl.apply(null, hex2rgb(b.ac));
+    var sat = base.s < 0.12 ? 0.05 : Math.min(0.75, Math.max(0.5, base.s));
+    var offs = [0, 40, -40, 80, -80, 160];
+    var ls = [0.44, 0.52, 0.36, 0.6, 0.48, 0.4];
+    return offs.map(function (o, k) {
+      return hsl2hex(((base.h + o) % 360 + 360) % 360, sat, ls[k]);
+    });
+  }
+  function colorFor(i) {
+    if (S.mode === 'same') return S.color;
+    if (S.mode === 'custom' && S.links[i] && S.links[i].color) return S.links[i].color;
+    var p = palette();
+    return p[i % p.length];
+  }
+  function safeUrl(u) {
+    u = (u || '').trim();
+    if (!u || u === 'https://') return '#';
+    if (/^(https?:|mailto:|tel:)/i.test(u)) return u;
+    return 'https://' + u.replace(/^\/+/, '');
+  }
+  function icoHTML(k) {
+    var d = ICONS[k];
+    if (!d) return '';
+    var br = !!d.b;
+    return '<span class="ico' + (br ? ' br' : '') + '"' + (br ? ' style="--brand:' + d.b + '"' : '') +
+      '><svg viewBox="0 0 24 24" aria-hidden="true">' + d.s + '</svg></span>';
+  }
+  function footHTML() {
+    if (S.foot.mode === 'off') return '';
+    var yr = '<span data-year>' + String(new Date().getFullYear()) + '</span>';
+    if (S.foot.mode === 'on') return 'Design by <b>Mas Irkham</b> · All rights reserved © ' + yr;
+    return esc(S.foot.text).replace(/\{tahun\}/g, yr);
+  }
+  function setStatus(msg) { $('#status').textContent = msg; }
+  var IMG_HINT = 'Gambar tidak bisa dimuat. Pastikan link langsung ke file gambar (.jpg, .png, .webp) dan dapat diakses publik. Link Google Drive, Dropbox, atau halaman web biasa tidak bisa dipakai. Cara paling aman: unggah file.';
+
+  function bioHTML() {
+    var b = BG[S.bg];
+    var init = (S.brand.trim().charAt(0) || 'B').toUpperCase();
+    var av = S.img
+      ? '<img src="' + esc(S.img) + '" alt="Logo" referrerpolicy="no-referrer">'
+      : '<span class="av-init">' + esc(init) + '</span>';
+    var frame = S.frame === 'thick' ? 'fr-thick' : S.frame === 'double' ? 'fr-double' : S.frame === 'ring' ? 'fr-ring' : '';
+    var links = S.links.map(function (l, i) {
+      var c = colorFor(i);
+      var ico = icoHTML(l.icon);
+      return '<a class="bio-link' + (ico ? '' : ' noico') + '" href="' + esc(safeUrl(l.url)) + '" target="_blank" rel="noopener" style="--b:' + c + ';--bt:' + contrastOn(c) + ';justify-content:' + justifyOf(S.t.link.a) + '">' +
+        ico + '<span class="lbl" style="' + tStyle('link') + '">' + esc(l.label || 'Link') + '</span></a>';
+    }).join('');
+    var foot = footHTML();
+    return '<div class="bio" style="background:' + b.bg + ';color:' + b.fg + ';--acc:' + b.ac + '">' +
+      '<div class="bio-wrap">' +
+        '<div class="av' + (S.shape === 'square' ? ' sq' : '') + ' ' + frame + '" data-init="' + esc(init) + '">' + av + '</div>' +
+        '<h1 class="bio-name" style="' + tStyle('name') + ';' + alignMargins('name') + '">' + esc(S.brand.trim() || 'Nama Brand') + '</h1>' +
+        '<p class="bio-tag" style="' + tStyle('tag') + ';' + alignMargins('tag') + '">' + esc(S.tagline) + '</p>' +
+        '<nav class="bio-links">' + links + '</nav>' +
+      '</div>' +
+      (foot ? '<footer class="bio-foot">' + foot + '</footer>' : '') +
+    '</div>';
+  }
+
+  function exportHTML() {
+    var fallback = '<script>(function(){' +
+      'var y=String(new Date().getFullYear());' +
+      'document.querySelectorAll("[data-year]").forEach(function(e){e.textContent=y;});' +
+      'document.querySelectorAll(".av").forEach(function(av){' +
+        'var im=av.querySelector("img"); if(!im) return;' +
+        'im.addEventListener("error",function(){av.innerHTML="<span class=\\"av-init\\">"+(av.getAttribute("data-init")||"B")+"</span>";});' +
+      '});' +
+    '})();<\/script>';
+    return '<!doctype html>\n<html lang="id">\n<head>\n<meta charset="utf-8">\n' +
+      '<meta name="viewport" content="width=device-width,initial-scale=1">\n' +
+      '<title>' + esc(S.brand.trim() || 'Bio Link') + '</title>\n' +
+      '<link href="' + FONT_URL + '" rel="stylesheet">\n' +
+      '<style>\nbody{margin:0;background:#fff}\n' + BIO_CSS + '\n</style>\n</head>\n<body>\n' +
+      bioHTML() + '\n' + fallback + '\n</body>\n</html>';
+  }
+
+  function update() {
+    var dev = $('#dev');
+    dev.className = 'dev dev-' + S.device;
+    dev.innerHTML = bioHTML();
+    var im = dev.querySelector('.av img');
+    if (im) {
+      im.onerror = function () { setStatus(IMG_HINT); };
+    }
+    $('#code').value = exportHTML();
+  }
+
+  function syncSeg() {
+    document.querySelectorAll('[data-set]').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(String(S[b.dataset.set]) === b.dataset.v));
+    });
+  }
+
+  function typoHTML(key) {
+    var t = S.t[key];
+    return '<div class="typo" data-typo="' + key + '">' +
+      '<span class="tlabel">' + TYPO_LABEL[key] + '</span>' +
+      '<label class="f">Jenis font<select data-tk="f">' +
+        FONTS.map(function (f) {
+          return '<option value="' + f.n + '"' + (f.n === t.f ? ' selected' : '') + '>' + f.n + '</option>';
+        }).join('') +
+      '</select></label>' +
+      '<label class="f">Ukuran (px)<input type="number" min="10" max="80" data-tk="s" value="' + t.s + '"></label>' +
+      '<label class="f">Ketebalan<select data-tk="w">' +
+        WEIGHTS.map(function (w) {
+          return '<option value="' + w[0] + '"' + (w[0] === t.w ? ' selected' : '') + '>' + w[1] + '</option>';
+        }).join('') +
+      '</select></label>' +
+      '<label class="f">Perataan<select data-tk="a">' +
+        [['left', 'Rata kiri'], ['center', 'Tengah'], ['right', 'Rata kanan']].map(function (o) {
+          return '<option value="' + o[0] + '"' + (o[0] === t.a ? ' selected' : '') + '>' + o[1] + '</option>';
+        }).join('') +
+      '</select></label>' +
+      '<div class="tgrp">' +
+        '<label class="tg"><input type="checkbox" data-tk="i"' + (t.i ? ' checked' : '') + '> Miring</label>' +
+        '<label class="tg"><input type="checkbox" data-tk="u"' + (t.u ? ' checked' : '') + '> Huruf besar</label>' +
+        '<label class="tg"><input type="checkbox" data-tk="d"' + (t.d ? ' checked' : '') + '> Garis bawah</label>' +
+      '</div>' +
+    '</div>';
+  }
+
+  function buildTypo() {
+    $('#typo-name').innerHTML = typoHTML('name');
+    $('#typo-tag').innerHTML = typoHTML('tag');
+    $('#typo-link').innerHTML = typoHTML('link');
+  }
+
+  function buildFoot() {
+    var opts = [['on', 'Aktif'], ['off', 'Tidak aktif'], ['custom', 'Isi sendiri']];
+    var html = '<div class="rg">' + opts.map(function (o) {
+      return '<label><input type="radio" name="foot" value="' + o[0] + '"' + (S.foot.mode === o[0] ? ' checked' : '') + '> ' + o[1] + '</label>';
+    }).join('') + '</div>';
+    if (S.foot.mode === 'on') {
+      html += '<p class="hint">Teks: Design by Mas Irkham · All rights reserved, dengan tahun otomatis.</p>';
+    } else if (S.foot.mode === 'custom') {
+      html += '<label class="f">Teks footer (tulis {tahun} untuk tahun otomatis)' +
+        '<input type="text" id="foottext" value="' + esc(S.foot.text) + '" maxlength="140"></label>';
+    } else {
+      html += '<p class="hint">Footer disembunyikan.</p>';
+    }
+    $('#footarea').innerHTML = html;
+  }
+
+  function buildBg() {
+    $('#bg').innerHTML = BG.map(function (b, i) {
+      return '<button type="button" class="bgc" data-act="set" data-set="bg" data-v="' + i + '" aria-pressed="' + (S.bg === i) + '">' +
+        '<span class="sw" style="background:' + b.bg + '"></span>' +
+        '<b>' + String(i + 1).padStart(2, '0') + ' · ' + esc(b.n) + '</b>' +
+        '<small>' + esc(b.m) + '</small></button>';
+    }).join('');
+  }
+
+  function buildChips() {
+    var full = S.links.length >= 10;
+    $('#chips').innerHTML = PRESETS.map(function (p, i) {
+      var used = S.links.some(function (l) { return l.label === p.l; });
+      return '<button type="button" class="chip" data-act="preset" data-i="' + i + '"' + (used || full ? ' disabled' : '') + '>+ ' + esc(p.l) + '</button>';
+    }).join('');
+    $('#count').textContent = S.links.length + ' / 10 link';
+  }
+
+  function iconOptions(sel) {
+    return ICON_ORDER.map(function (k) {
+      var name = k === 'none' ? 'Tanpa ikon' : ICONS[k].n + (ICONS[k].b ? ' (resmi)' : '');
+      return '<option value="' + k + '"' + (sel === k ? ' selected' : '') + '>' + esc(name) + '</option>';
+    }).join('');
+  }
+
+  function buildLinks() {
+    $('#links').innerHTML = S.links.map(function (l, i) {
+      return '<div class="lrow">' +
+        '<div class="lrow-top"><span class="lnum">' + (i + 1) + '</span>' +
+          '<input type="text" data-key="label" data-i="' + i + '" value="' + esc(l.label) + '" placeholder="Label tombol" maxlength="40" aria-label="Label link ' + (i + 1) + '">' +
+          '<button type="button" class="x" data-act="dellink" data-i="' + i + '" aria-label="Hapus link ' + (i + 1) + '"' + (S.links.length <= 1 ? ' disabled' : '') + '>×</button>' +
+        '</div>' +
+        '<div class="lrow-bot">' +
+          '<input type="url" data-key="url" data-i="' + i + '" value="' + esc(l.url) + '" placeholder="https://" maxlength="300" aria-label="URL link ' + (i + 1) + '">' +
+          '<select data-key="icon" data-i="' + i + '" aria-label="Ikon link ' + (i + 1) + '">' + iconOptions(l.icon || 'none') + '</select>' +
+          (S.mode === 'custom' ? '<input type="color" data-key="color" data-i="' + i + '" value="' + colorFor(i) + '" aria-label="Warna tombol ' + (i + 1) + '">' : '') +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  function buildBtn() {
+    var html = '';
+    if (S.mode === 'auto') {
+      html = '<p class="hint">Setiap tombol mendapat warna berbeda yang diturunkan dari nuansa background.</p>' +
+        '<div class="palette">' + palette().map(function (c) { return '<i style="background:' + c + '"></i>'; }).join('') + '</div>';
+    } else if (S.mode === 'same') {
+      html = '<div class="row"><span class="f" style="margin:0">Warna seragam semua tombol</span>' +
+        '<input type="color" data-color="same" value="' + S.color + '" aria-label="Warna seragam tombol"></div>';
+    } else {
+      html = '<p class="hint">Atur warna tiap tombol pada daftar link di atas.</p>';
+    }
+    $('#btnarea').innerHTML = html;
+  }
+
+  function buildAv() {
+    var html;
+    if (S.av === 'upload') {
+      html = '<label class="f">Pilih foto atau logo (PNG, JPG, WebP)' +
+        '<input type="file" id="file" accept="image/*"></label>' +
+        '<p class="hint">Gambar otomatis dikecilkan agar ringan. PNG tetap transparan.</p>';
+    } else {
+      html = '<label class="f">Alamat gambar (https://)' +
+        '<input type="url" id="imgurl" value="' + esc(S.img) + '" placeholder="https://contoh.com/logo.png"></label>' +
+        '<p class="hint">Gunakan link langsung ke berkas gambar, bukan halaman yang memuat gambar.</p>';
+    }
+    $('#avarea').innerHTML = html;
+  }
+
+  function refresh() {
+    buildBg();
+    buildChips();
+    buildLinks();
+    buildTypo();
+    buildBtn();
+    buildAv();
+    buildFoot();
+    syncSeg();
+    update();
+  }
+
+  function fallbackCopy() {
+    var ta = $('#code');
+    ta.focus();
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    setStatus(ok ? 'Kode HTML tersalin.' : 'Salin manual: buka "Lihat kode HTML", pilih semua, lalu tekan Ctrl+C.');
+  }
+
+  function copyCode() {
+    var code = exportHTML();
+    try {
+      navigator.clipboard.writeText(code).then(
+        function () { setStatus('Kode HTML tersalin.'); },
+        fallbackCopy
+      );
+    } catch (e) {
+      fallbackCopy();
+    }
+  }
+
+  function readImage(file) {
+    var reader = new FileReader();
+    reader.onload = function () {
+      var img = new Image();
+      img.onload = function () {
+        var max = 480;
+        var sc = Math.min(1, max / Math.max(img.width, img.height));
+        var c = document.createElement('canvas');
+        c.width = Math.max(1, Math.round(img.width * sc));
+        c.height = Math.max(1, Math.round(img.height * sc));
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+        var type = file.type === 'image/png' ? 'image/png' : 'image/jpeg';
+        S.img = c.toDataURL(type, 0.92);
+        setStatus('Gambar dimuat.');
+        update();
+      };
+      img.onerror = function () { setStatus('Berkas ini tidak bisa dibaca sebagai gambar.'); };
+      img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function setTypo(el) {
+    var key = el.closest('[data-typo]').dataset.typo;
+    var tk = el.dataset.tk;
+    var v;
+    if (tk === 'i' || tk === 'u' || tk === 'd') v = el.checked;
+    else if (tk === 's' || tk === 'w') v = Number(el.value) || S.t[key][tk];
+    else v = el.value;
+    S.t[key][tk] = v;
+    update();
+  }
+
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-act]');
+    if (!b || b.disabled) return;
+    var a = b.dataset.act;
+    if (a === 'set') {
+      var k = b.dataset.set;
+      S[k] = k === 'bg' ? +b.dataset.v : b.dataset.v;
+      if (k === 'av') S.img = '';
+      refresh();
+    } else if (a === 'addlink') {
+      if (S.links.length < 10) { S.links.push({label: 'Link Baru', url: 'https://', color: '', icon: 'none'}); refresh(); }
+    } else if (a === 'dellink') {
+      if (S.links.length > 1) { S.links.splice(+b.dataset.i, 1); refresh(); }
+    } else if (a === 'preset') {
+      var p = PRESETS[+b.dataset.i];
+      if (S.links.length < 10 && !S.links.some(function (l) { return l.label === p.l; })) {
+        S.links.push({label: p.l, url: p.u, color: '', icon: p.i});
+        refresh();
+      }
+    } else if (a === 'copy') {
+      copyCode();
+    } else if (a === 'select') {
+      var ta = $('#code');
+      ta.focus();
+      ta.select();
+      setStatus('Kode dipilih. Tekan Ctrl+C (Cmd+C di Mac) untuk menyalin.');
+    }
+  });
+
+  document.addEventListener('input', function (e) {
+    var t = e.target;
+    if (t.dataset.tk) {
+      setTypo(t);
+    } else if (t.dataset.field) {
+      S[t.dataset.field] = t.value;
+      update();
+    } else if (t.dataset.key && t.dataset.i !== undefined && t.tagName !== 'SELECT') {
+      S.links[+t.dataset.i][t.dataset.key] = t.value;
+      update();
+    } else if (t.dataset.color === 'same') {
+      S.color = t.value;
+      update();
+    } else if (t.id === 'imgurl') {
+      S.img = t.value.trim();
+      setStatus(S.img ? 'Memuat gambar…' : '');
+      update();
+    } else if (t.id === 'foottext') {
+      S.foot.text = t.value;
+      update();
+    }
+  });
+
+  document.addEventListener('change', function (e) {
+    var t = e.target;
+    if (t.dataset.tk) {
+      setTypo(t);
+    } else if (t.tagName === 'SELECT' && t.dataset.key === 'icon') {
+      S.links[+t.dataset.i].icon = t.value;
+      update();
+    } else if (t.name === 'foot') {
+      S.foot.mode = t.value;
+      buildFoot();
+      update();
+    } else if (t.id === 'file' && t.files && t.files[0]) {
+      readImage(t.files[0]);
+    }
+  });
+
+  var st = document.createElement('style');
+  st.textContent = BIO_CSS;
+  document.head.appendChild(st);
+
+  $('#brand').value = S.brand;
+  $('#tagline').value = S.tagline;
+  refresh();
+})();
+</script>
+
+</body></html>
