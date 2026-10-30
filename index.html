@@ -123,6 +123,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
           <button type="button" data-act="set" data-set="mode" data-v="custom" aria-pressed="false">Kustom per tombol</button>
         </div>
         <div id="btnarea"></div>
+        <div id="layout" style="margin-top:14px"></div>
       </section>
 
       <section class="sec">
@@ -294,7 +295,8 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
     img: '',
     shape: 'circle',
     frame: 'ring',
-    device: 'desktop'
+    device: 'desktop',
+    twocol: false
   };
 
   var BIO_CSS = '' +
@@ -310,6 +312,9 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
     '.bio-name{width:100%;margin:8px 0 0;line-height:1.08;text-wrap:balance;letter-spacing:-.01em;overflow-wrap:anywhere;font-weight:400}' +
     '.bio-tag{width:100%;margin:0;line-height:1.6;opacity:.86;max-width:34ch;text-wrap:balance}' +
     '.bio-links{width:100%;display:flex;flex-direction:column;gap:12px;margin-top:14px}' +
+    '.bio-links.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}' +
+    '.bio-links.two .bio-link:last-child:nth-child(odd){grid-column:1/-1}' +
+    '@media (max-width:340px){.bio-links.two{grid-template-columns:1fr}}' +
     '.bio-link{display:flex;align-items:center;justify-content:flex-start;gap:12px;width:100%;min-height:56px;padding:9px 18px 9px 10px;border-radius:16px;background:var(--b);color:var(--bt);text-decoration:none;box-shadow:0 10px 24px -12px var(--b);transition:transform .2s ease,box-shadow .2s ease;box-sizing:border-box}' +
     '.bio-link.noico{justify-content:center;padding:14px 20px}' +
     '.bio-link:hover{transform:translateY(-2px);box-shadow:0 14px 28px -12px var(--b)}' +
@@ -448,7 +453,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
         '<div class="av' + (S.shape === 'square' ? ' sq' : '') + ' ' + frame + '" data-init="' + esc(init) + '">' + av + '</div>' +
         '<h1 class="bio-name" style="' + tStyle('name') + ';' + alignMargins('name') + '">' + esc(S.brand.trim() || 'Nama Brand') + '</h1>' +
         '<p class="bio-tag" style="' + tStyle('tag') + ';' + alignMargins('tag') + '">' + esc(S.tagline) + '</p>' +
-        '<nav class="bio-links">' + links + '</nav>' +
+        '<nav class="bio-links' + (S.twocol ? ' two' : '') + '">' + links + '</nav>' +
       '</div>' +
       (foot ? '<footer class="bio-foot">' + foot + '</footer>' : '') +
     '</div>';
@@ -537,6 +542,13 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
         '<label class="tg"><input type="checkbox" data-tk="d"' + (t.d ? ' checked' : '') + '> Garis bawah</label>' +
       '</div>' +
     '</div>';
+  }
+
+  function buildLayout() {
+    var el = $('#layout');
+    if (!el) return;
+    el.innerHTML = '<label class="tg"><input type="checkbox" id="twocol"' + (S.twocol ? ' checked' : '') + '> Tampilkan link 2 kolom</label>' +
+      '<p class="hint">Jika jumlah link ganjil, tombol terakhir melebar penuh. Di layar sangat kecil otomatis kembali 1 kolom.</p>';
   }
 
   function buildTypo() {
@@ -634,6 +646,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
     buildBg();
     buildChips();
     buildLinks();
+    buildLayout();
     buildTypo();
     buildBtn();
     buildAv();
@@ -735,6 +748,7 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
     if (['circle', 'square'].indexOf(d.shape) >= 0) S.shape = d.shape;
     if (['none', 'ring', 'double', 'thick'].indexOf(d.frame) >= 0) S.frame = d.frame;
     if (['desktop', 'tablet', 'mobile'].indexOf(d.device) >= 0) S.device = d.device;
+    if (typeof d.twocol === 'boolean') S.twocol = d.twocol;
 
     $('#brand').value = S.brand;
     $('#tagline').value = S.tagline;
@@ -821,6 +835,9 @@ input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-rad
       setTypo(t);
     } else if (t.tagName === 'SELECT' && t.dataset.key === 'icon') {
       S.links[+t.dataset.i].icon = t.value;
+      update();
+    } else if (t.id === 'twocol') {
+      S.twocol = t.checked;
       update();
     } else if (t.name === 'foot') {
       S.foot.mode = t.value;
